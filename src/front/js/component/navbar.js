@@ -17,11 +17,11 @@ export const Navbar = () => {
                 <button className="btn btn-primary">Register</button>
               </Link>
             </div>
-            {/* <div className="col-3 d-flex flex-direction-">
+            <div className="col-3 d-flex flex-direction-">
               <Link to="/login">
                 <button className="btn btn-primary">Login</button>
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
