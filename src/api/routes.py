@@ -49,3 +49,12 @@ def create_token():
 
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token) 
+
+
+#@jwt_required()
+@api.route("/private", methods=["GET"])
+@jwt_required()
+def get_private():
+    dictionary = {"message": "Hola soy un mensaje que viene del mas alla y solo me muestro si tienes autorizacion, ya que soy una ruta privada"}
+   
+    return jsonify(dictionary) 

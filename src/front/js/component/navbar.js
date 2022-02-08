@@ -14,19 +14,25 @@ export const Navbar = () => {
             </Link>
           </div>
           <div className="col-6 d-flex justify-content-end">
-            <div className="col-3">
-              <Link to="/registro">
-                <button className="btn btn-primary">Register</button>
-              </Link>
-            </div>
+            {/* <div className="col-3"></div> */}
             {/* ---------->>>>> */}
             <div className="col-3 d-flex flex-direction-">
               {!store.token ? (
-                <Link to="/login">
-                  <button className="btn btn-primary">Log In</button>
-                </Link>
+                <div className="nav">
+                  <Link to="/registro">
+                    <button className="btn btn-primary me-2">Register</button>
+                  </Link>
+                  <Link to="/login">
+                    <button className="btn btn-primary">Log In</button>
+                  </Link>
+                </div>
               ) : (
-                <button className="btn btn-primary" onClick={()=> actions.logout()}>Log Out</button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => actions.logout()}
+                >
+                  Log Out
+                </button>
               )}
             </div>
           </div>

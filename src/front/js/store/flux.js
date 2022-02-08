@@ -38,6 +38,21 @@ const getState = ({ getStore, getActions, setStore }) => {
         sessionStorage.removeItem("token");
         console.log("logout");
         setStore({ token: null })
+        //console.log(store.token);
+      },
+/* ------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+      privateMessage: () => {
+        const store = getStore();
+        var requestOptions = {
+          method: 'GET',
+          headers: {Authorization : "Bearer" + " " + store.token},
+          redirect: 'follow'
+        };
+        
+        fetch("https://3001-4geeksacademy-reactflask-j7ddulb4pgy.ws-us30.gitpod.io/api/private", requestOptions)
+          .then(response => response.json())
+          .then(result => setStore({message : result.message}))
+          .catch(error => console.log('error', error));
       },
 
 
