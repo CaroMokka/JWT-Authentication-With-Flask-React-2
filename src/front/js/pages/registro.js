@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+//import { useHistory } from "react-router-dom";
 
 export const Registro = () => {
     const {store, actions} = useContext(Context);
@@ -9,6 +10,7 @@ export const Registro = () => {
     password: "",
   });
   const [validation, setValidation] = useState(true);
+  //const history = useHistory();
 
   const handleChange = ({ target: { name, value } }) => {
     setRegistro({ ...registro, [name]: value });
@@ -17,22 +19,27 @@ export const Registro = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      registro.name !== "" ||
-      registro.email !== "" ||
+      registro.name !== "" &&
+      registro.email !== "" &&
       registro.password !== ""
     ) {
         
       console.log(registro);
       actions.setRegistro(registro);
+      //history.push("/login");
       setRegistro({ name: "", email: "", password: "" });
       setValidation(true);
+      
     } else 
       setValidation(false)
   };
   //aca debe ir function de flux
 
+  
+
   return (
     <div className="container bg-light p-4 mt-4 shadow-sm">
+      
       <form className="form" onSubmit={handleSubmit}>
         <h2 className="text-center mt-4">Registro</h2>
         <div className="container w-50">

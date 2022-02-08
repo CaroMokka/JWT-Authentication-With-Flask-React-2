@@ -27,6 +27,8 @@ def add_user():
     name = request_body["name"]
     email = request_body["email"] 
     password = request_body["password"]
+   
+
     user = User.query.filter_by(email=email).first()
     if user:
         return jsonify({"msg":"Usuario ya existe"}), 444
@@ -55,6 +57,8 @@ def create_token():
 @api.route("/private", methods=["GET"])
 @jwt_required()
 def get_private():
-    dictionary = {"message": "Hola soy un mensaje que viene del mas alla y solo me muestro si tienes autorizacion, ya que soy una ruta privada"}
+
+    email = get_jwt_identity()
+    dictionary = {"message": "Bienvenid@, " + email}
    
     return jsonify(dictionary) 

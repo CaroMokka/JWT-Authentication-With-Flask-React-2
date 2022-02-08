@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <div className="text-center mt-5">
       <h1>HOME</h1>
-      {!store.token ? (<div className="alert alert-info">Bienvenid@, a Home</div>) : ( <div className="alert alert-success">{store.message}</div>) }
+      {!store.token ? (<div className="alert alert-info">Bienvenid@ a Home</div>) : ( <div className="alert alert-success">{store.message}</div>) }
 
       
       <p>

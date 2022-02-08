@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-//import { useHistory } from "react-router-dom";
+
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -56,6 +56,7 @@ export const Login = () => {
               >
                 Send
               </button>
+              <p className="bg-warning text-center mt-5">Ingresa "test" para ambos inputs, login de prueba</p>
             </div>
           </div>
         )}
