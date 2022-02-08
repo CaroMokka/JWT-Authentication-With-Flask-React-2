@@ -12,6 +12,7 @@ import { Footer } from "./component/footer";
 import { Registro } from "./pages/registro";
 import { Login } from "./pages/login";
 
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -36,6 +37,7 @@ const Layout = () => {
 						<Route exact path="/login">
 							<Login/>
 						</Route>
+						
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
